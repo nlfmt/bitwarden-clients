@@ -44,6 +44,9 @@ html.browser_safari {
   &.theme_nord app-root {
     border-color: #2e3440;
   }
+  &.theme_avaze app-root {
+    border-color: #2f2f2f;
+  }
 }
 
 .environment-selector-btn {

@@ -291,6 +291,8 @@ export class WindowMain {
         return "#15181e";
       case "nord":
         return "#3b4252";
+      case "avaze":
+        return "#181818";
     }
   }
 

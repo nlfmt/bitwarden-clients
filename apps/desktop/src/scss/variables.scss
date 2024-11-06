@@ -47,6 +47,18 @@ $code-color: #c01176;
 $code-color-dark: #f08dc7;
 $code-color-nord: #dbb1d5;
 
+$bg: #181818;
+$bg1: #1f1f1f;
+$bg2: #292929;
+
+$primary: #a268ff;
+$primary-accent: #b98eff;
+$text: #c2c2c2;
+$text-dark: #bfbfbf;
+$text-mute: #7a7a7a;
+
+$border: #2f2f2f;
+
 $themes: (
   light: (
     textColor: $text-color,
@@ -164,6 +176,65 @@ $themes: (
     accountSwitcherTextColor: #ffffff,
     svgSuffix: "-dark.svg",
     hrColor: #bac0ce,
+    codeColor: $code-color-dark,
+  ),
+  avaze: (
+    textColor: $text,
+    borderColor: $border,
+    backgroundColor: $bg,
+    borderColorAlt: $border,
+    backgroundColorAlt: $bg1,
+    // Ensure the `window.main.ts` is updated with this value
+    backgroundColorAlt2: $bg,
+    scrollbarColor: $bg2,
+    scrollbarHoverColor: $bg1,
+    boxBackgroundColor: $bg1,
+    boxBackgroundHoverColor: $bg2,
+    boxBorderColor: $border,
+    headerBackgroundColor: $bg,
+    headerBorderColor: $border,
+    headerInputBackgroundColor: $bg2,
+    headerInputBackgroundFocusColor: $bg2,
+    headerInputColor: $text,
+    headerInputPlaceholderColor: $text-dark,
+    listItemBackgroundColor: $bg,
+    listItemBackgroundHoverColor: $bg1,
+    listItemBorderColor: $border,
+    disabledIconColor: $text-mute,
+    headingColor: $text-dark,
+    headingButtonColor: $text-dark,
+    headingButtonHoverColor: $text,
+    labelColor: $text-dark,
+    mutedColor: $text-dark,
+    totpStrokeColor: $border,
+    boxRowButtonColor: $text-dark,
+    boxRowButtonHoverColor: $text,
+    inputBorderColor: $border,
+    inputBackgroundColor: $bg1,
+    inputPlaceholderColor: $text-mute,
+    buttonBackgroundColor: $bg2,
+    buttonBorderColor: $border,
+    buttonColor: $text,
+    buttonPrimaryColor: $primary,
+    buttonDangerColor: #ff8d85,
+    primaryColor: $primary,
+    primaryAccentColor: $primary-accent,
+    dangerColor: #ff8d85,
+    successColor: #52e07c,
+    infoColor: #a4b0c6,
+    warningColor: #ffeb66,
+    logoSuffix: "white",
+    mfaLogoSuffix: "-w.png",
+    passwordNumberColor: $primary,
+    passwordSpecialColor: #ff8d85,
+    passwordCountText: #ffffff,
+    calloutBorderColor: $border,
+    calloutBackgroundColor: $bg1,
+    toastTextColor: $bg,
+    accountSwitcherBackgroundColor: $bg1,
+    accountSwitcherTextColor: #ffffff,
+    svgSuffix: "-dark.svg",
+    hrColor: $text-dark,
     codeColor: $code-color-dark,
   ),
   nord: (

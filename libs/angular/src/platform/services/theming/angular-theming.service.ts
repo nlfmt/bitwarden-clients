@@ -61,6 +61,7 @@ export class AngularThemingService implements AbstractThemingService {
         "theme_" + ThemeTypes.Dark,
         "theme_" + ThemeTypes.Nord,
         "theme_" + ThemeTypes.SolarizedDark,
+        "theme_" + ThemeTypes.Avaze,
       );
       document.documentElement.classList.add("theme_" + theme);
     });

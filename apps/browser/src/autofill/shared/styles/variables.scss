@@ -34,6 +34,18 @@ $success-color-dark: #8db89b;
 $error-color-light: #c83522;
 $error-color-dark: #ee9792;
 
+$bg: #181818;
+$bg1: #1f1f1f;
+$bg2: #292929;
+
+$primary: #a268ff;
+$primary-accent: #b98eff;
+$text: #c2c2c2;
+$text-dark: #bfbfbf;
+$text-mute: #7a7a7a;
+
+$border: #2f2f2f;
+
 $themes: (
   light: (
     textColor: $text-color,
@@ -70,6 +82,23 @@ $themes: (
     passkeysAuthenticating: #bac0ce,
     passwordSpecialColor: #ff8d85,
     passwordNumberColor: #6f9df1,
+  ),
+  avaze: (
+    textColor: $text,
+    mutedTextColor: $text-mute,
+    backgroundColor: $bg,
+    backgroundOffsetColor: $bg1,
+    buttonPrimaryColor: $nord8,
+    primaryColor: $primary,
+    textContrast: $text-dark,
+    inputBorderColor: $border,
+    inputBackgroundColor: $bg2,
+    borderColor: $border,
+    focusOutlineColor: lighten($border, 25%),
+    successColor: $success-color-dark,
+    passkeysAuthenticating: $primary,
+    passwordSpecialColor: $primary,
+    passwordNumberColor: $primary-accent,
   ),
   nord: (
     textColor: $nord5,

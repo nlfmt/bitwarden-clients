@@ -179,6 +179,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
       { name: this.i18nService.t("light"), value: ThemeType.Light },
       { name: this.i18nService.t("dark"), value: ThemeType.Dark },
       { name: "Nord", value: ThemeType.Nord },
+      { name: "Avaze", value: ThemeType.Avaze },
     ];
 
     this.clearClipboardOptions = [

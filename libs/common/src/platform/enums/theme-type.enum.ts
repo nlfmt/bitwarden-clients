@@ -7,6 +7,7 @@ export enum ThemeType {
   Dark = "dark",
   Nord = "nord",
   SolarizedDark = "solarizedDark",
+  Avaze = "avaze",
 }
 
 export const ThemeTypes = {
@@ -15,6 +16,7 @@ export const ThemeTypes = {
   Dark: "dark",
   Nord: "nord",
   SolarizedDark: "solarizedDark",
+  Avaze: "avaze",
 } as const;
 
 export type Theme = (typeof ThemeTypes)[keyof typeof ThemeTypes];
