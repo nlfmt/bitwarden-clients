@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "Güvənli qeyd"
   },
+  "typeSshKey": {
+    "message": "SSH açarı"
+  },
   "folders": {
     "message": "Qovluqlar"
   },
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "Ünvan"
+  },
+  "sshPrivateKey": {
+    "message": "Private açar"
+  },
+  "sshPublicKey": {
+    "message": "Public açar"
+  },
+  "sshFingerprint": {
+    "message": "Barmaq izi"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Açar növü"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
+  "sshKeyGenerated": {
+    "message": "Yeni bir SSH açarı yaradıldı"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "SSH açar tələbini təsdiqləmək üçün seyfinizin kilidini açın."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "SSH açar tələbinin vaxtı bitdi."
+  },
+  "enableSshAgent": {
+    "message": "SSH agenti fəallaşdır"
+  },
+  "enableSshAgentDesc": {
+    "message": "SSH tələblərini birbaşa Bitwarden seyfinizdən imzalamaq üçün SSH agentini fəallaşdırın."
+  },
+  "enableSshAgentHelp": {
+    "message": "SSH agenti, SSH tələblərini birbaşa Bitwarden seyfinizdən imzalamağa imkan verən developerlərə yönəlmiş bir xidmətdir."
   },
   "premiumRequired": {
     "message": "Premium üzvlük lazımdır"
@@ -399,6 +444,12 @@
   },
   "copyPassword": {
     "message": "Parolu kopyala"
+  },
+  "regenerateSshKey": {
+    "message": "SSH açarını yenidən yarat"
+  },
+  "copySshPrivateKey": {
+    "message": "SSH private açarını kopyala"
   },
   "copyPassphrase": {
     "message": "Keçid ifadəsini kopyala",
@@ -2393,8 +2444,8 @@
   "generateEmail": {
     "message": "E-poçt yarat"
   },
-  "generatorBoundariesHint": {
-    "message": "Dəyər $MIN$-$MAX$ arasında olmalıdır",
+  "spinboxBoundariesHint": {
+    "message": "Dəyər, $MIN$-$MAX$ arasında olmalıdır.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2404,6 +2455,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Güclü bir parol yaratmaq üçün $RECOMMENDED$ və ya daha çox xarakter istifadə edin.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Güclü bir keçid ifadəsi yaratmaq üçün $RECOMMENDED$ və ya daha çox söz istifadə edin.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -2618,14 +2689,29 @@
   "notificationSentDevice": {
     "message": "Cihazınıza bir bildiriş göndərildi."
   },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Cihazınıza bir bildiriş göndərildi"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Hesabınızın kilidinin açıq olduğuna və barmaq izi ifadəsinin digər cihazda uyuşduğuna əmin olun"
+  },
+  "needAnotherOptionV1": {
+    "message": "Başqa bir seçimə ehtiyacınız var?"
+  },
   "fingerprintMatchInfo": {
     "message": "Lütfən seyfinizin kilidinin açıq olduğuna və Barmaq izi ifadəsinin digər cihazla uyuşduğuna əmin olun."
   },
   "fingerprintPhraseHeader": {
     "message": "Barmaq izi ifadəsi"
   },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Tələbiniz təsdiqləndikdə bildiriş alacaqsınız"
+  },
   "needAnotherOption": {
     "message": "Cihazla giriş etmə, Bitwarden tətbiqinin ayarlarında qurulmalıdır. Başqa bir seçimə ehtiyacınız var?"
+  },
+  "viewAllLogInOptions": {
+    "message": "Bütün giriş seçimlərinə bax"
   },
   "viewAllLoginOptions": {
     "message": "Bütün giriş seçimlərinə bax"
@@ -3224,6 +3310,36 @@
   },
   "ssoError": {
     "message": "SSO giriş üçün açıq port tapıla bilmədi."
+  },
+  "authorize": {
+    "message": "Səlahiyyət ver"
+  },
+  "deny": {
+    "message": "Rədd et"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "SSH açar istifadəsini təsdiqlə"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "bura müraciət tələb edir:"
+  },
+  "unknownApplication": {
+    "message": "Bir tətbiq"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "Parolla qorunan SSH açarlarının daxilə köçürülməsi hələ dəstəklənmir"
+  },
+  "invalidSshKey": {
+    "message": "SSH açarı yararsızdır"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "SSH açar növü dəstəklənmir"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Açarı lövhədən daxilə köçür"
+  },
+  "sshKeyPasted": {
+    "message": "SSH açarı uğurla daxilə köçürüldü"
   },
   "fileSavedToDevice": {
     "message": "Fayl cihazda saxlanıldı. Endirilənləri cihazınızdan idarə edin."

@@ -152,6 +152,15 @@
   "copyLicenseNumber": {
     "message": "Копиране на номера на свидетелството"
   },
+  "copyPrivateKey": {
+    "message": "Копиране на частния ключ"
+  },
+  "copyPublicKey": {
+    "message": "Копиране на публичния ключ"
+  },
+  "copyFingerprint": {
+    "message": "Копиране на отпечатъка"
+  },
   "copyCustomField": {
     "message": "Копиране на $FIELD$",
     "placeholders": {
@@ -1764,6 +1773,9 @@
   "typeIdentity": {
     "message": "Самоличност"
   },
+  "typeSshKey": {
+    "message": "SSH ключ"
+  },
   "newItemHeader": {
     "message": "Ново $TYPE$",
     "placeholders": {
@@ -1838,6 +1850,9 @@
   },
   "secureNotes": {
     "message": "Защитени бележки"
+  },
+  "sshKeys": {
+    "message": "SSH ключове"
   },
   "clear": {
     "message": "Изчистване",
@@ -2877,8 +2892,8 @@
   "generateEmail": {
     "message": "Генериране на електронна поща"
   },
-  "generatorBoundariesHint": {
-    "message": "Стойността трябва да бъде между $MIN$ и $MAX$",
+  "spinboxBoundariesHint": {
+    "message": "Стойността трябва да бъде между $MIN$ и $MAX$.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2888,6 +2903,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Използвайте поне $RECOMMENDED$ знака, за да генерирате сложна парола.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Използвайте поне $RECOMMENDED$ думи, за да генерирате сложна парола-фраза.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -3138,11 +3173,26 @@
   "resendNotification": {
     "message": "Повторно изпращане на известието"
   },
+  "viewAllLogInOptions": {
+    "message": "Вижте всички възможности за вписване"
+  },
   "viewAllLoginOptions": {
     "message": "Вижте всички възможности за вписване"
   },
   "notificationSentDevice": {
     "message": "Към устройството Ви е изпратено известие."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Към устройството Ви е изпратено известие"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Уверете се, че регистрацията Ви е отключена и че уникалната фраза съвпада с другото устройство"
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Ще получите уведомление когато заявката бъде одобрена"
+  },
+  "needAnotherOptionV1": {
+    "message": "Предпочитате друг вариант?"
   },
   "loginInitiated": {
     "message": "Вписването е стартирано"
@@ -3237,8 +3287,17 @@
   "opensInANewWindow": {
     "message": "Отваря се в нов прозорец"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Remember this device to make future logins seamless"
+  },
   "deviceApprovalRequired": {
     "message": "Изисква се одобрение на устройството. Изберете начин за одобрение по-долу:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Device approval required"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Select an approval option below"
   },
   "rememberThisDevice": {
     "message": "Запомняне на това устройство"
@@ -3312,6 +3371,9 @@
   },
   "userEmailMissing": {
     "message": "Липсва е-поща на потребителя"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Active user email not found. Logging you out."
   },
   "deviceTrusted": {
     "message": "Устройството е доверено"
@@ -3748,6 +3810,9 @@
   },
   "accessing": {
     "message": "Използване на"
+  },
+  "loggedInExclamation": {
+    "message": "Logged in!"
   },
   "passkeyNotCopied": {
     "message": "Секретният ключ няма да бъде копиран"
@@ -4240,6 +4305,21 @@
   "filters": {
     "message": "Филтри"
   },
+  "filterVault": {
+    "message": "Филтриране на трезора"
+  },
+  "filterApplied": {
+    "message": "Приложен е един филтър"
+  },
+  "filterAppliedPlural": {
+    "message": "Приложени са $COUNT$ филтри",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "personalDetails": {
     "message": "Лични данни"
   },
@@ -4593,6 +4673,30 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "Изискванията на политиката за големи компании бяха приложени към тази настройка"
   },
+  "sshPrivateKey": {
+    "message": "Частен ключ"
+  },
+  "sshPublicKey": {
+    "message": "Публичен ключ"
+  },
+  "sshFingerprint": {
+    "message": "Отпечатък"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Тип на ключа"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048 бита"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072 бита"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096 бита"
+  },
   "retry": {
     "message": "Повторен опит"
   },
@@ -4787,5 +4891,11 @@
   },
   "generatedPassword": {
     "message": "Генерирана парола"
+  },
+  "compactMode": {
+    "message": "Compact mode"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

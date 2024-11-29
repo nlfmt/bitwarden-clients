@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "Сигурносна белешка"
   },
+  "typeSshKey": {
+    "message": "SSH key"
+  },
   "folders": {
     "message": "Фасцикле"
   },
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "Адреса"
+  },
+  "sshPrivateKey": {
+    "message": "Private key"
+  },
+  "sshPublicKey": {
+    "message": "Public key"
+  },
+  "sshFingerprint": {
+    "message": "Fingerprint"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Key type"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
+  "sshKeyGenerated": {
+    "message": "A new SSH key was generated"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "Please unlock your vault to approve the SSH key request."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "SSH key request timed out."
+  },
+  "enableSshAgent": {
+    "message": "Enable SSH agent"
+  },
+  "enableSshAgentDesc": {
+    "message": "Enable the SSH agent to sign SSH requests right from your Bitwarden vault."
+  },
+  "enableSshAgentHelp": {
+    "message": "The SSH agent is a service targeted at developers that allows you to sign SSH requests directly from your Bitwarden vault."
   },
   "premiumRequired": {
     "message": "Потребан Премијум"
@@ -400,6 +445,12 @@
   "copyPassword": {
     "message": "Копирај лозинку"
   },
+  "regenerateSshKey": {
+    "message": "Regenerate SSH key"
+  },
+  "copySshPrivateKey": {
+    "message": "Copy SSH private key"
+  },
   "copyPassphrase": {
     "message": "Копирај приступну фразу",
     "description": "Copy passphrase to clipboard"
@@ -558,7 +609,7 @@
     "message": "Креирај налог"
   },
   "newToBitwarden": {
-    "message": "Нови сте у Bitwarden-у?"
+    "message": "New to Bitwarden?"
   },
   "setAStrongPassword": {
     "message": "Поставите јаку лозинку"
@@ -570,16 +621,16 @@
     "message": "Пријавите се"
   },
   "logInToBitwarden": {
-    "message": "Пријавите се на Bitwarden"
+    "message": "Log in to Bitwarden"
   },
   "logInWithPasskey": {
-    "message": "Пријавите се са приступним кључем"
+    "message": "Log in with passkey"
   },
   "loginWithDevice": {
-    "message": "Пријавите се са уређајем"
+    "message": "Log in with device"
   },
   "useSingleSignOn": {
-    "message": "Употребити једнократну пријаву"
+    "message": "Use single sign-on"
   },
   "submit": {
     "message": "Пошаљи"
@@ -1684,10 +1735,10 @@
     "message": "Брисање налога је трајно. Не може се поништити."
   },
   "cannotDeleteAccount": {
-    "message": "Није могуће избрисати налог"
+    "message": "Cannot delete account"
   },
   "cannotDeleteAccountDesc": {
-    "message": "Ова радња се не може довршити јер је ваш налог у власништву организације. Обратите се администратору своје организације за додатне детаље."
+    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
   },
   "accountDeleted": {
     "message": "Налог обрисан"
@@ -2393,8 +2444,8 @@
   "generateEmail": {
     "message": "Генеришите имејл"
   },
-  "generatorBoundariesHint": {
-    "message": "Вредност мора бити између $MIN$ и $MAX$",
+  "spinboxBoundariesHint": {
+    "message": "Value must be between $MIN$ and $MAX$.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2404,6 +2455,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Use $RECOMMENDED$ characters or more to generate a strong password.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Use $RECOMMENDED$ words or more to generate a strong passphrase.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -2618,14 +2689,29 @@
   "notificationSentDevice": {
     "message": "Обавештење је послато на ваш уређај."
   },
+  "aNotificationWasSentToYourDevice": {
+    "message": "A notification was sent to your device"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Make sure your account is unlocked and the fingerprint phrase matches on the other device"
+  },
+  "needAnotherOptionV1": {
+    "message": "Need another option?"
+  },
   "fingerprintMatchInfo": {
     "message": "Уверите се да је ваш сеф откључан и да се фраза отиска прста подудара на другом уређају."
   },
   "fingerprintPhraseHeader": {
     "message": "Сигурносна фраза сефа"
   },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "You will be notified once the request is approved"
+  },
   "needAnotherOption": {
     "message": "Пријава помоћу уређаја мора бити подешена у подешавањима Bitwarden апликације. Потребна је друга опција?"
+  },
+  "viewAllLogInOptions": {
+    "message": "View all log in options"
   },
   "viewAllLoginOptions": {
     "message": "Погредајте све опције пријављивања"
@@ -3224,6 +3310,36 @@
   },
   "ssoError": {
     "message": "Нису пронађени портови за SSO пријаву."
+  },
+  "authorize": {
+    "message": "Authorize"
+  },
+  "deny": {
+    "message": "Deny"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "Confirm SSH key usage"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "is requesting access to"
+  },
+  "unknownApplication": {
+    "message": "An application"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "Importing password protected SSH keys is not yet supported"
+  },
+  "invalidSshKey": {
+    "message": "The SSH key is invalid"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "The SSH key type is not supported"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Import key from clipboard"
+  },
+  "sshKeyPasted": {
+    "message": "SSH key imported successfully"
   },
   "fileSavedToDevice": {
     "message": "Датотека је сачувана на уређају. Управљајте преузимањима са свог уређаја."

@@ -152,6 +152,15 @@
   "copyLicenseNumber": {
     "message": "Kopioi ajokortin numero"
   },
+  "copyPrivateKey": {
+    "message": "Kopioi yksityinen avain"
+  },
+  "copyPublicKey": {
+    "message": "Kopioi julkinen avain"
+  },
+  "copyFingerprint": {
+    "message": "Kopioi sormenjälki"
+  },
   "copyCustomField": {
     "message": "Kopioi $FIELD$",
     "placeholders": {
@@ -1424,7 +1433,7 @@
     "message": "Palvelimen URL"
   },
   "selfHostBaseUrl": {
-    "message": "Self-host server URL",
+    "message": "Itse ylläpidetyn palvelimen URL-osoite",
     "description": "Label for field requesting a self-hosted integration service URL"
   },
   "apiUrl": {
@@ -1764,6 +1773,9 @@
   "typeIdentity": {
     "message": "Henkilöllisyys"
   },
+  "typeSshKey": {
+    "message": "SSH-avain"
+  },
   "newItemHeader": {
     "message": "Uusi $TYPE$",
     "placeholders": {
@@ -1795,13 +1807,13 @@
     "message": "Salasanahistoria"
   },
   "generatorHistory": {
-    "message": "Generator history"
+    "message": "Generaattorihistoria"
   },
   "clearGeneratorHistoryTitle": {
-    "message": "Clear generator history"
+    "message": "Tyhjennä generaattorihistoria"
   },
   "cleargGeneratorHistoryDescription": {
-    "message": "If you continue, all entries will be permanently deleted from generator's history. Are you sure you want to continue?"
+    "message": "Jos jatkat, kaikki generaattorihistorian kohteet poistetaan. Haluatko varmasti jatkaa?"
   },
   "back": {
     "message": "Takaisin"
@@ -1838,6 +1850,9 @@
   },
   "secureNotes": {
     "message": "Salatut muistiot"
+  },
+  "sshKeys": {
+    "message": "SSH Keys"
   },
   "clear": {
     "message": "Tyhjennä",
@@ -1920,7 +1935,7 @@
     "message": "Tyhjennä historia"
   },
   "nothingToShow": {
-    "message": "Nothing to show"
+    "message": "Mitään näytettävää ei ole"
   },
   "nothingGeneratedRecently": {
     "message": "Et ole luonut mitään hiljattain"
@@ -2710,7 +2725,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "cardMetrics": {
-    "message": "out of $TOTAL$",
+    "message": "/$TOTAL$",
     "placeholders": {
       "total": {
         "content": "$1",
@@ -2877,8 +2892,8 @@
   "generateEmail": {
     "message": "Luo sähköpostiosoite"
   },
-  "generatorBoundariesHint": {
-    "message": "Arvon tulee olla väliltä $MIN$—$MAX$",
+  "spinboxBoundariesHint": {
+    "message": "Arvon tulee olla väliltä $MIN$—$MAX$.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2888,6 +2903,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Käytä $RECOMMENDED$ tai useampaa merkkiä vahvan salasanan luomiseen.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Käytä $RECOMMENDED$ tai useampaa sanaa vahvan salalauseen luomiseen.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -3138,11 +3173,26 @@
   "resendNotification": {
     "message": "Lähetä ilmoitus uudelleen"
   },
+  "viewAllLogInOptions": {
+    "message": "Näytä kaikki kirjautumisvaihtoehdot"
+  },
   "viewAllLoginOptions": {
     "message": "Näytä kaikki kirjautumisvaihtoehdot"
   },
   "notificationSentDevice": {
     "message": "Laitteellesi on lähetetty ilmoitus."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Laitteeseesi lähetettiin ilmoitus"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Make sure your account is unlocked and the fingerprint phrase matches on the other device"
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Sinulle ilmoitetaan, kun pyyntö on hyväksytty"
+  },
+  "needAnotherOptionV1": {
+    "message": "Tarvitsetko toisen vaihtoehdon?"
   },
   "loginInitiated": {
     "message": "Kirjautuminen aloitettu"
@@ -3237,8 +3287,17 @@
   "opensInANewWindow": {
     "message": "Avautuu uudessa ikkunassa"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Remember this device to make future logins seamless"
+  },
   "deviceApprovalRequired": {
     "message": "Laitehyväksyntä vaaditaan. Valitse hyväksyntätapa alta:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Device approval required"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Select an approval option below"
   },
   "rememberThisDevice": {
     "message": "Muista tämä laite"
@@ -3312,6 +3371,9 @@
   },
   "userEmailMissing": {
     "message": "Käyttäjän sähköpostiosoite puuttuu"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Active user email not found. Logging you out."
   },
   "deviceTrusted": {
     "message": "Laitteeseen luotettu"
@@ -3748,6 +3810,9 @@
   },
   "accessing": {
     "message": "Avataan"
+  },
+  "loggedInExclamation": {
+    "message": "Logged in!"
   },
   "passkeyNotCopied": {
     "message": "Pääsyavainta ei kopioida"
@@ -4240,6 +4305,21 @@
   "filters": {
     "message": "Suodattimet"
   },
+  "filterVault": {
+    "message": "Suodata holvi"
+  },
+  "filterApplied": {
+    "message": "Yksi suodatin käytössä"
+  },
+  "filterAppliedPlural": {
+    "message": "$COUNT$ suodatinta käytössä",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "personalDetails": {
     "message": "Henkilökohtaiset tiedot"
   },
@@ -4593,6 +4673,30 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "Yrityskäytännön vaatimukset vaikuttavat tähän asetukseen"
   },
+  "sshPrivateKey": {
+    "message": "Yksityinen avain"
+  },
+  "sshPublicKey": {
+    "message": "Julkinen avain"
+  },
+  "sshFingerprint": {
+    "message": "Sormenjälki"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Avaintyyppi"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "retry": {
     "message": "Yritä uudelleen"
   },
@@ -4680,7 +4784,7 @@
     "description": "Represents the % key in screen reader content as a readable word"
   },
   "caretCharacterDescriptor": {
-    "message": "Caret",
+    "message": "Hattu",
     "description": "Represents the ^ key in screen reader content as a readable word"
   },
   "ampersandCharacterDescriptor": {
@@ -4708,7 +4812,7 @@
     "description": "Represents the - key in screen reader content as a readable word"
   },
   "plusCharacterDescriptor": {
-    "message": "Plus",
+    "message": "Plus-merkki",
     "description": "Represents the + key in screen reader content as a readable word"
   },
   "equalsCharacterDescriptor": {
@@ -4787,5 +4891,11 @@
   },
   "generatedPassword": {
     "message": "Luotu salasana"
+  },
+  "compactMode": {
+    "message": "Pienikokoinen tila"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }
