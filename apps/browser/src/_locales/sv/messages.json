@@ -1319,6 +1319,12 @@
   "enterVerificationCodeApp": {
     "message": "Ange den 6-siffriga verifieringskoden från din autentiseringsapp."
   },
+  "authenticationTimeout": {
+    "message": "Authentication timeout"
+  },
+  "authenticationSessionTimedOut": {
+    "message": "The authentication session timed out. Please restart the login process."
+  },
   "enterVerificationCodeEmail": {
     "message": "Ange den 6-siffriga verifieringskoden som skickades till $EMAIL$.",
     "placeholders": {
@@ -3167,8 +3173,8 @@
   "viewAllLogInOptions": {
     "message": "Visa alla inloggningsalternativ"
   },
-  "viewAllLoginOptions": {
-    "message": "Visa alla inloggningsalternativ"
+  "viewAllLoginOptionsV1": {
+    "message": "View all log in options"
   },
   "notificationSentDevice": {
     "message": "En avisering har skickats till din enhet."

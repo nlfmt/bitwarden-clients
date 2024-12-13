@@ -1319,6 +1319,12 @@
   "enterVerificationCodeApp": {
     "message": "Въведете шестцифрения код за потвърждение от приложението за удостоверяване."
   },
+  "authenticationTimeout": {
+    "message": "Време на давност за удостоверяването"
+  },
+  "authenticationSessionTimedOut": {
+    "message": "Сесията за удостоверяване е изтекла. Моля, започнете отначало процеса по вписване."
+  },
   "enterVerificationCodeEmail": {
     "message": "Въведете шестцифрения код за потвърждение, който е бил изпратен на $EMAIL$.",
     "placeholders": {
@@ -3167,7 +3173,7 @@
   "viewAllLogInOptions": {
     "message": "Вижте всички възможности за вписване"
   },
-  "viewAllLoginOptions": {
+  "viewAllLoginOptionsV1": {
     "message": "Вижте всички възможности за вписване"
   },
   "notificationSentDevice": {
@@ -4884,10 +4890,10 @@
     "message": "Генерирана парола"
   },
   "compactMode": {
-    "message": "Compact mode"
+    "message": "Компактен режим"
   },
   "beta": {
-    "message": "Beta"
+    "message": "Бета"
   },
   "extensionWidth": {
     "message": "Ширина на разширението"

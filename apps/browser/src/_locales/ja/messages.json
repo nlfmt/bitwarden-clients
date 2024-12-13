@@ -1319,6 +1319,12 @@
   "enterVerificationCodeApp": {
     "message": "認証アプリに表示された6桁の認証コードを入力してください。"
   },
+  "authenticationTimeout": {
+    "message": "Authentication timeout"
+  },
+  "authenticationSessionTimedOut": {
+    "message": "The authentication session timed out. Please restart the login process."
+  },
   "enterVerificationCodeEmail": {
     "message": "$EMAIL$に送信された6桁の認証コードを入力してください。",
     "placeholders": {
@@ -3167,8 +3173,8 @@
   "viewAllLogInOptions": {
     "message": "View all log in options"
   },
-  "viewAllLoginOptions": {
-    "message": "すべてのログインオプションを表示"
+  "viewAllLoginOptionsV1": {
+    "message": "View all log in options"
   },
   "notificationSentDevice": {
     "message": "デバイスに通知を送信しました。"

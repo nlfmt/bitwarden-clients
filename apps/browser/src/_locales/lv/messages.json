@@ -1319,6 +1319,12 @@
   "enterVerificationCodeApp": {
     "message": "Jāievada 6 ciparu apstiprinājuma kods no autentificētāja lietotnes."
   },
+  "authenticationTimeout": {
+    "message": "Autentificēšanās noildze"
+  },
+  "authenticationSessionTimedOut": {
+    "message": "Iestājās autentificēšanās sesijas noildze. Lūgums sākt pieteikšanos no jauna."
+  },
   "enterVerificationCodeEmail": {
     "message": "Jāievada 6 ciparu apstiprinājuma kods, kas tika nosūtīts uz $EMAIL$.",
     "placeholders": {
@@ -3167,8 +3173,8 @@
   "viewAllLogInOptions": {
     "message": "Skatīt visas pieteikšanās iespējas"
   },
-  "viewAllLoginOptions": {
-    "message": "Skatīt visas pieteikšanās iespējas"
+  "viewAllLoginOptionsV1": {
+    "message": "View all log in options"
   },
   "notificationSentDevice": {
     "message": "Uz ierīci ir nosūtīts paziņojums."

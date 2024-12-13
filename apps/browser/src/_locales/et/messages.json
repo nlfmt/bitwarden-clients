@@ -1319,6 +1319,12 @@
   "enterVerificationCodeApp": {
     "message": "Sisesta autentimise rakendusest 6 kohaline number."
   },
+  "authenticationTimeout": {
+    "message": "Authentication timeout"
+  },
+  "authenticationSessionTimedOut": {
+    "message": "The authentication session timed out. Please restart the login process."
+  },
   "enterVerificationCodeEmail": {
     "message": "Sisesta 6 kohaline number, mis saadeti e-posti aadressile $EMAIL$.",
     "placeholders": {
@@ -3167,8 +3173,8 @@
   "viewAllLogInOptions": {
     "message": "View all log in options"
   },
-  "viewAllLoginOptions": {
-    "message": "Vaata kõiki valikuid"
+  "viewAllLoginOptionsV1": {
+    "message": "View all log in options"
   },
   "notificationSentDevice": {
     "message": "Sinu seadmesse saadeti teavitus."

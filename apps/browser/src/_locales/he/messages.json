@@ -1319,6 +1319,12 @@
   "enterVerificationCodeApp": {
     "message": "הכנס את קוד האימות בן 6 הספרות מאפליקציית האימות שלך."
   },
+  "authenticationTimeout": {
+    "message": "Authentication timeout"
+  },
+  "authenticationSessionTimedOut": {
+    "message": "The authentication session timed out. Please restart the login process."
+  },
   "enterVerificationCodeEmail": {
     "message": "הכנס את קוד האימות בן 6 הספרות שנשלח ל-$EMAIL$.",
     "placeholders": {
@@ -3167,7 +3173,7 @@
   "viewAllLogInOptions": {
     "message": "View all log in options"
   },
-  "viewAllLoginOptions": {
+  "viewAllLoginOptionsV1": {
     "message": "View all log in options"
   },
   "notificationSentDevice": {

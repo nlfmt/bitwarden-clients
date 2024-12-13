@@ -1319,6 +1319,12 @@
   "enterVerificationCodeApp": {
     "message": "Ipasok ang 6 na digit na code ng pagpapatunay mula sa iyong authenticator app."
   },
+  "authenticationTimeout": {
+    "message": "Authentication timeout"
+  },
+  "authenticationSessionTimedOut": {
+    "message": "The authentication session timed out. Please restart the login process."
+  },
   "enterVerificationCodeEmail": {
     "message": "Ipasok ang 6 na digit na code na na-email sa $EMAIL$.",
     "placeholders": {
@@ -3167,8 +3173,8 @@
   "viewAllLogInOptions": {
     "message": "View all log in options"
   },
-  "viewAllLoginOptions": {
-    "message": "Tingnan ang lahat ng mga pagpipilian sa pag log in"
+  "viewAllLoginOptionsV1": {
+    "message": "View all log in options"
   },
   "notificationSentDevice": {
     "message": "Naipadala na ang notification sa iyong device."

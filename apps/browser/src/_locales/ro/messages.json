@@ -1319,6 +1319,12 @@
   "enterVerificationCodeApp": {
     "message": "Introducere cod de verificare din 6 cifre din aplicația de autentificare."
   },
+  "authenticationTimeout": {
+    "message": "Authentication timeout"
+  },
+  "authenticationSessionTimedOut": {
+    "message": "The authentication session timed out. Please restart the login process."
+  },
   "enterVerificationCodeEmail": {
     "message": "Introducere cod de verificare din 6 cifre care a fost trimis prin e-mail la $EMAIL$.",
     "placeholders": {
@@ -3167,8 +3173,8 @@
   "viewAllLogInOptions": {
     "message": "View all log in options"
   },
-  "viewAllLoginOptions": {
-    "message": "Afișați toate opțiunile de conectare"
+  "viewAllLoginOptionsV1": {
+    "message": "View all log in options"
   },
   "notificationSentDevice": {
     "message": "O notificare a fost trimisă pe dispozitivul dvs."

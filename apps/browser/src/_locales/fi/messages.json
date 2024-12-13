@@ -1319,6 +1319,12 @@
   "enterVerificationCodeApp": {
     "message": "Syötä todennussovelluksesi näyttämä kuusinumeroinen todennuskoodi."
   },
+  "authenticationTimeout": {
+    "message": "Todennuksen aikakatkaisu"
+  },
+  "authenticationSessionTimedOut": {
+    "message": "Todennusistunto aikakatkaistiin. Ole hyvä ja aloita kirjautumisprosessi uudelleen."
+  },
   "enterVerificationCodeEmail": {
     "message": "Syötä osoitteeseen $EMAIL$ lähetetty kuusinumeroinen todennuskoodi.",
     "placeholders": {
@@ -3167,8 +3173,8 @@
   "viewAllLogInOptions": {
     "message": "Näytä kaikki kirjautumisvaihtoehdot"
   },
-  "viewAllLoginOptions": {
-    "message": "Näytä kaikki kirjautumisvaihtoehdot"
+  "viewAllLoginOptionsV1": {
+    "message": "View all log in options"
   },
   "notificationSentDevice": {
     "message": "Laitteellesi on lähetetty ilmoitus."
@@ -4890,12 +4896,12 @@
     "message": "Beta"
   },
   "extensionWidth": {
-    "message": "Extension width"
+    "message": "Laajennuksen leveys"
   },
   "wide": {
-    "message": "Wide"
+    "message": "Leveä"
   },
   "extraWide": {
-    "message": "Extra wide"
+    "message": "Erittäin leveä"
   }
 }
