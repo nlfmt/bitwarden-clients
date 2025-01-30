@@ -83,7 +83,7 @@
   },
   "win": {
     "electronUpdaterCompatibility": ">=0.0.1",
-    "target": ["portable", "nsis-web", "appx", "nsis"],
+    "target": ["nsis"],
     "sign": "./sign.js",
     "extraFiles": [
       {
