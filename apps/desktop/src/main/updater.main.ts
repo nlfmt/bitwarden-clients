@@ -76,7 +76,7 @@ export class UpdaterMain {
           this.reset();
         }
       }
-    });
+    }, 10000);
 
     autoUpdater.on("update-not-available", () => {
       if (this.doingUpdateCheckWithFeedback && this.windowMain.win != null) {
@@ -111,8 +111,14 @@ export class UpdaterMain {
 
       if (result.response === 0) {
         // Quit and install have a different window logic, setting `isQuitting` just to be safe.
-        this.windowMain.isQuitting = true;
-        autoUpdater.quitAndInstall(true, true);
+        const updateCommand = await firstValueFrom(this.desktopSettingsService.updateCommand$);
+
+        if (updateCommand) {
+          exec(updateCommand, { windowsHide: false }).unref();
+        } else {
+          this.windowMain.isQuitting = true;
+          autoUpdater.quitAndInstall(true, true);
+        }
       }
     });
 
