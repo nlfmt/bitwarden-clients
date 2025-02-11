@@ -78,6 +78,13 @@ const MINIMIZE_ON_COPY = new UserKeyDefinition<boolean>(DESKTOP_SETTINGS_DISK, "
 const UPDATE_COMMAND = new KeyDefinition<string>(DESKTOP_SETTINGS_DISK, "updateCommand", {
   deserializer: (s) => s,
 });
+const PREVENT_SCREENSHOTS = new KeyDefinition<boolean>(
+  DESKTOP_SETTINGS_DISK,
+  "preventScreenshots",
+  {
+    deserializer: (b) => b,
+  },
+);
 
 /**
  * Various settings for controlling application behavior specific to the desktop client.
@@ -156,6 +163,12 @@ export class DesktopSettingsService {
    * The update command to run
    */
   updateCommand$ = this.updateCommandState.state$;
+  private readonly preventScreenshotState = this.stateProvider.getGlobal(PREVENT_SCREENSHOTS);
+
+  /**
+   * The application setting for whether or not to allow screenshots of the app.
+   */
+  preventScreenshots$ = this.preventScreenshotState.state$.pipe(map(Boolean));
 
   private readonly minimizeOnCopyState = this.stateProvider.getActive(MINIMIZE_ON_COPY);
 
@@ -287,5 +300,13 @@ export class DesktopSettingsService {
    */
   async setUpdateCommand(value: string) {
     await this.stateProvider.getGlobal(UPDATE_COMMAND).update(() => value);
+  }
+
+  /**
+   * Sets the setting for whether or not the screenshot protection is enabled.
+   * @param value `true` if the screenshot protection is enabled, `false` if it is not.
+   */
+  async setPreventScreenshots(value: boolean) {
+    await this.preventScreenshotState.update(() => value);
   }
 }

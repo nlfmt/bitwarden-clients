@@ -34,6 +34,7 @@ export class DefaultThemeStateService implements ThemeStateService {
       // Default the user to their system theme
       if (
         isExtensionRefresh &&
+        theme != null &&
         [ThemeType.Nord, ThemeType.SolarizedDark, ThemeType.Avaze].includes(theme)
       ) {
         return ThemeType.System;
