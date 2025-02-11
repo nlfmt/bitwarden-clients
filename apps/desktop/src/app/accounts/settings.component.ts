@@ -119,6 +119,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
     enableDuckDuckGoBrowserIntegration: false,
     theme: [null as ThemeType | null],
     locale: [null as string | null],
+    updateCommand: "",
   });
 
   private refreshTimeoutSettings$ = new BehaviorSubject<void>(undefined);
@@ -290,6 +291,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
       enableSshAgent: await firstValueFrom(this.desktopSettingsService.sshAgentEnabled$),
       theme: await firstValueFrom(this.themeStateService.selectedTheme$),
       locale: await firstValueFrom(this.i18nService.userSetLocale$),
+      updateCommand: await firstValueFrom(this.desktopSettingsService.updateCommand$),
     };
     this.form.setValue(initialValues, { emitEvent: false });
 
@@ -628,6 +630,10 @@ export class SettingsComponent implements OnInit, OnDestroy {
 
   async saveLocale() {
     await this.i18nService.setLocale(this.form.value.locale);
+  }
+
+  async saveUpdateCommand() {
+    await this.desktopSettingsService.setUpdateCommand(this.form.value.updateCommand);
   }
 
   async saveTheme() {

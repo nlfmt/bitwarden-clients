@@ -476,6 +476,20 @@
                 </select>
                 <small id="localeHelp" class="help-block">{{ "languageDesc" | i18n }}</small>
               </div>
+              <div class="form-group">
+                <label for="updateCommand">Update Command</label>
+                <input
+                  id="updateCommand"
+                  type="text"
+                  formControlName="updateCommand"
+                  aria-describedby="updateCommandHelp"
+                  (change)="saveUpdateCommand()"
+                  style="outline: none"
+                />
+                <small id="updateCommandHelp" class="help-block"
+                  >Command to run to update the app</small
+                >
+              </div>
             </ng-container>
           </div>
         </div>

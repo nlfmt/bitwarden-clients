@@ -75,6 +75,10 @@ const MINIMIZE_ON_COPY = new UserKeyDefinition<boolean>(DESKTOP_SETTINGS_DISK, "
   clearOn: [], // User setting, no need to clear
 });
 
+const UPDATE_COMMAND = new KeyDefinition<string>(DESKTOP_SETTINGS_DISK, "updateCommand", {
+  deserializer: (s) => s,
+});
+
 /**
  * Various settings for controlling application behavior specific to the desktop client.
  */
@@ -146,6 +150,12 @@ export class DesktopSettingsService {
   private readonly sshAgentEnabledState = this.stateProvider.getGlobal(SSH_AGENT_ENABLED);
 
   sshAgentEnabled$ = this.sshAgentEnabledState.state$.pipe(map(Boolean));
+
+  private readonly updateCommandState = this.stateProvider.getGlobal(UPDATE_COMMAND);
+  /**
+   * The update command to run
+   */
+  updateCommand$ = this.updateCommandState.state$;
 
   private readonly minimizeOnCopyState = this.stateProvider.getActive(MINIMIZE_ON_COPY);
 
@@ -269,5 +279,13 @@ export class DesktopSettingsService {
    */
   async setMinimizeOnCopy(value: boolean, userId: UserId) {
     await this.stateProvider.getUser(userId, MINIMIZE_ON_COPY).update(() => value);
+  }
+
+  /**
+   * Sets the update command to run
+   * @param value The command to run
+   */
+  async setUpdateCommand(value: string) {
+    await this.stateProvider.getGlobal(UPDATE_COMMAND).update(() => value);
   }
 }
