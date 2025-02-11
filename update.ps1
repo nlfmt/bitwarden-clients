@@ -1,3 +1,4 @@
+Push-Location $PSScriptRoot
 
 git fetch upstream
 git merge upstream/main
@@ -12,4 +13,5 @@ npm run dist:win
 taskkill.exe /F /IM "Bitwarden.exe" 
 Start-Process ".\dist\Bitwarden Setup*.exe"
 
+Pop-Location
 Pop-Location

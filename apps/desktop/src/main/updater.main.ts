@@ -1,4 +1,4 @@
-import { exec } from "child_process";
+import { spawn } from "child_process";
 
 import { dialog, shell } from "electron";
 import log from "electron-log";
@@ -43,8 +43,7 @@ export class UpdaterMain {
       this.doingUpdateCheck = true;
     });
 
-    // autoUpdater.on("update-available", async () => {
-    setTimeout(async () => {
+    autoUpdater.on("update-available", async () => {
       if (this.doingUpdateCheckWithFeedback) {
         if (this.windowMain.win == null) {
           this.reset();
@@ -66,7 +65,7 @@ export class UpdaterMain {
           const updateCommand = await firstValueFrom(this.desktopSettingsService.updateCommand$);
 
           if (updateCommand) {
-            exec(updateCommand, { windowsHide: false }).unref();
+            await this.manualUpdate(updateCommand);
           } else {
             // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
             // eslint-disable-next-line @typescript-eslint/no-floating-promises
@@ -76,7 +75,7 @@ export class UpdaterMain {
           this.reset();
         }
       }
-    }, 10000);
+    });
 
     autoUpdater.on("update-not-available", () => {
       if (this.doingUpdateCheckWithFeedback && this.windowMain.win != null) {
@@ -111,14 +110,8 @@ export class UpdaterMain {
 
       if (result.response === 0) {
         // Quit and install have a different window logic, setting `isQuitting` just to be safe.
-        const updateCommand = await firstValueFrom(this.desktopSettingsService.updateCommand$);
-
-        if (updateCommand) {
-          exec(updateCommand, { windowsHide: false }).unref();
-        } else {
-          this.windowMain.isQuitting = true;
-          autoUpdater.quitAndInstall(true, true);
-        }
+        this.windowMain.isQuitting = true;
+        autoUpdater.quitAndInstall(true, true);
       }
     });
 
@@ -150,7 +143,8 @@ export class UpdaterMain {
     }
 
     this.doingUpdateCheckWithFeedback = withFeedback;
-    if (withFeedback) {
+    const updateCommand = await firstValueFrom(this.desktopSettingsService.updateCommand$);
+    if (withFeedback || updateCommand) {
       autoUpdater.autoDownload = false;
     }
 
@@ -163,12 +157,33 @@ export class UpdaterMain {
   }
 
   private userDisabledUpdates(): boolean {
-    return true;
     for (const arg of process.argv) {
       if (arg != null && arg.toUpperCase().indexOf("--ELECTRON_NO_UPDATER=1") > -1) {
         return true;
       }
     }
     return process.env.ELECTRON_NO_UPDATER === "1";
+  }
+
+  private async manualUpdate(updateCommand: string) {
+    if (!this.windowMain.win) {
+      return;
+    }
+
+    const result = await dialog.showMessageBox(this.windowMain.win, {
+      type: "info",
+      title: this.i18nService.t("bitwarden") + " - " + this.i18nService.t("updateAvailable"),
+      message: this.i18nService.t("updateAvailable"),
+      detail: this.i18nService.t("updateAvailableDesc"),
+      buttons: [this.i18nService.t("yes"), this.i18nService.t("no")],
+      cancelId: 1,
+      defaultId: 0,
+      noLink: true,
+    });
+
+    if (result.response === 0) {
+      const [program, ...args] = updateCommand.split(" ");
+      spawn(program, args, { detached: true, shell: true, stdio: "ignore" }).unref();
+    }
   }
 }
