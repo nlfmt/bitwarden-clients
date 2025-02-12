@@ -166,24 +166,22 @@ export class UpdaterMain {
   }
 
   private async manualUpdate(updateCommand: string) {
-    if (!this.windowMain.win) {
+    const isWin = process.platform === "win32";
+    if (!isWin) {
+      await dialog.showMessageBox(this.windowMain.win, {
+        message: "This feature is only available on Windows.",
+        detail: "Please update manually.",
+        buttons: [this.i18nService.t("ok")],
+        defaultId: 0,
+        noLink: true,
+      });
       return;
     }
 
-    const result = await dialog.showMessageBox(this.windowMain.win, {
-      type: "info",
-      title: this.i18nService.t("bitwarden") + " - " + this.i18nService.t("updateAvailable"),
-      message: this.i18nService.t("updateAvailable"),
-      detail: this.i18nService.t("updateAvailableDesc"),
-      buttons: [this.i18nService.t("yes"), this.i18nService.t("no")],
-      cancelId: 1,
-      defaultId: 0,
-      noLink: true,
-    });
-
-    if (result.response === 0) {
-      const [program, ...args] = updateCommand.split(" ");
-      spawn(program, args, { detached: true, shell: true, stdio: "ignore" }).unref();
-    }
+    spawn("powershell", ["-Command", updateCommand], {
+      stdio: "ignore",
+      detached: true,
+      shell: true,
+    }).unref();
   }
 }
